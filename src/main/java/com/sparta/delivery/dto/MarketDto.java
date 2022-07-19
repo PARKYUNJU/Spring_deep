@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 public class MarketDto {
 
     private String name;
-    private String minOrderPrice;
-    private String deliveryFee;
+    private int minOrderPrice;
+    private int deliveryFee;
 
 }

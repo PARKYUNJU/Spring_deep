@@ -6,8 +6,6 @@ import com.sparta.delivery.repository.MarketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
 
 @RequiredArgsConstructor
 @Service
@@ -16,23 +14,24 @@ public class MarketService {
 
 
     //음식점 등록
-   /* public void createMarket(MarketDto requestDto)
+    public Market createMarket(MarketDto requestDto)
     {
         String name=requestDto.getName();
-        String minOrderPrice= requestDto.getMinOrderPrice();
-        String deliveryFee= requestDto.getDeliveryFee();
+        int minOrderPrice= requestDto.getMinOrderPrice();
+        int deliveryFee= requestDto.getDeliveryFee();
 
-        if(Integer.parseInt(minOrderPrice)>1000000||Integer.parseInt(minOrderPrice)<1000)
+        if(minOrderPrice>1000000||minOrderPrice<1000)
             throw new IllegalArgumentException("1000원~1000,000원 사이를 입력해주세요.");
-        if(Integer.parseInt(minOrderPrice)%100!=0)
+        if(minOrderPrice%100!=0)
             throw new IllegalArgumentException("100원 단위로 입력해주세요.");
-        if(Integer.parseInt(deliveryFee)>10000)
+        if(deliveryFee>10000)
             throw new IllegalArgumentException("10,000원 이하로 입력해주세요.");
-        if(Integer.parseInt(deliveryFee)%500!=0)
+        if(deliveryFee%500!=0)
             throw new IllegalArgumentException("500원 단위로 입력해주세요");
 
-        Market market=new Market(requestDto);
+        Market market=new Market(name,minOrderPrice,deliveryFee);
         marketRepository.save(market);
 
-    }*/
+        return market;
+    }
 }

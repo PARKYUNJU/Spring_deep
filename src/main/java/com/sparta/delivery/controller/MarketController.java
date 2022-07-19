@@ -21,7 +21,7 @@ public class MarketController {
     private final MarketRepository marketRepository;
 
 
-    @GetMapping("/market/markets")
+    @GetMapping("/market/showmarkets")
     public List<Market> getMarket() {
         return marketRepository.findAllByOrderByModifiedAtDesc();
     }
@@ -30,7 +30,9 @@ public class MarketController {
     public Market createMarket(@RequestBody MarketDto requestdto)
     {
         Market market=new Market(requestdto);
-        return marketRepository.save(market);
+        return marketService.createMarket(requestdto);
+
+
 
     }
 }

@@ -21,12 +21,12 @@ public class Market extends Timestamped {
     private String name;
 
     @Column(nullable = false)
-    private String minOrderPrice;
+    private int minOrderPrice;
 
     @Column(nullable = false)
-    private String deliveryFee;
+    private int deliveryFee;
 
-    public Market(String name,String minOrderPrice,String deliveryFee){
+    public Market(String name,int minOrderPrice,int deliveryFee){
         this.name=name;
         this.minOrderPrice=minOrderPrice;
         this.deliveryFee=deliveryFee;
