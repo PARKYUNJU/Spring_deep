@@ -7,14 +7,10 @@
 
 UI 개발 없이 백엔드 서버를 개발해야 하기 때문에, 각 API 에서 제공되는 데이터들이 어떻게 사용될지는 아래 배달앱 샘플 UI 를 참고합니다. 
 
-<aside>
+
 🚨 주의! 샘플 UI 는 이해를 돕기 위한 것으로 실제 요구사항과 다를 수 있습니다. 반드시 과제 요구사항 내용에 맞춰 구현 해 주세요.
 
-</aside>
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d02b62b2-a4b1-4225-985b-06c4566263b9/Untitled.png)
-
-[ ]. 음식점 등록 및 조회
+### 1.. 음식점 등록 및 조회
     - 음식점 정보 입력받아 등록
         1. 음식점 이름 (name)
         2. 최소주문 가격 (minOrderPrice)
