@@ -4,11 +4,9 @@ import com.sparta.delivery.model.Market;
 import com.sparta.delivery.repository.MarketRepository;
 import com.sparta.delivery.service.MarketService;
 import com.sparta.delivery.dto.MarketDto;
+import jdk.javadoc.internal.doclets.formats.html.Contents;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,12 +19,15 @@ public class MarketController {
     private final MarketRepository marketRepository;
 
 
-    @GetMapping("/market/showmarkets")
+    //식당 조회
+    @GetMapping("/markets")
     public List<Market> getMarket() {
         return marketRepository.findAllByOrderByModifiedAtDesc();
     }
 
-    @PostMapping("/market/markets")
+
+    //식당 등록
+    @PostMapping("/market/register")
     public Market createMarket(@RequestBody MarketDto requestdto)
     {
         Market market=new Market(requestdto);
