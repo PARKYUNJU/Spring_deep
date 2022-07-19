@@ -32,7 +32,5 @@ public class MarketController {
         Market market=new Market(requestdto);
         return marketService.createMarket(requestdto);
 
-
-
     }
 }
