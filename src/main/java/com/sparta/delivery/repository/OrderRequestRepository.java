@@ -1,18 +1,17 @@
 package com.sparta.delivery.repository;
-import com.sparta.delivery.model.Market;
-import com.sparta.delivery.repository.MarketRepository;
+
+import com.sparta.delivery.model.OrderRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
+import com.sparta.delivery.repository.MenuRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface MarketRepository extends JpaRepository<Market, Long> {
+public interface OrderRequestRepository extends JpaRepository<OrderRequest, Long> {
 
-    List<Market> findAllByOrderByModifiedAtDesc();
-    Optional<Market> findById(Long id);
+    //OrderRequest : 메뉴id,수량
+    List<OrderRequest> findAll();
 
     //전부 찾아줘, 정렬해서, 수정된 날짜 기준으로, 최신순으로(내림차순)
     //공식문서 참고

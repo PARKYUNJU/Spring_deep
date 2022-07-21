@@ -1,20 +1,20 @@
 package com.sparta.delivery.service;
 
-import com.sparta.delivery.dto.MarketDto;
-import com.sparta.delivery.model.Market;
-import com.sparta.delivery.repository.MarketRepository;
+import com.sparta.delivery.dto.RestaurantDto;
+import com.sparta.delivery.model.Restaurant;
+import com.sparta.delivery.repository.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 
 @RequiredArgsConstructor
 @Service
-public class MarketService {
-    private final MarketRepository marketRepository;
+public class RestaurantService {
+    private final RestaurantRepository restaurantRepository;
 
 
     //음식점 등록
-    public Market createMarket(MarketDto requestDto)
+    public Restaurant createMarket(RestaurantDto requestDto)
     {
         String name=requestDto.getName();
         int minOrderPrice= requestDto.getMinOrderPrice();
@@ -29,9 +29,9 @@ public class MarketService {
         if(deliveryFee%500!=0)
             throw new IllegalArgumentException("500원 단위로 입력해주세요");
 
-        Market market=new Market(name,minOrderPrice,deliveryFee);
-        marketRepository.save(market);
+        Restaurant restaurant =new Restaurant(name,minOrderPrice,deliveryFee);
+        restaurantRepository.save(restaurant);
 
-        return market;
+        return restaurant;
     }
 }
